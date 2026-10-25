@@ -5,176 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Тест: Какой сценарий управляет твоими деньгами, отношениями и сексом</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-    body {
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      color: #2d3748;
-    }
-    .quiz-container {
-      background: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 650px;
-      padding: 30px;
-      position: relative;
-    }
-    .welcome-screen {
-      text-align: center;
-    }
-    .welcome-screen h1 {
-      font-size: 20px;
-      color: #1a202c;
-      margin-bottom: 20px;
-      line-height: 1.4;
-    }
-    .instruction-box {
-      background: #f7fafc;
-      border: 2px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 20px;
-      font-size: 15px;
-      color: #4a5568;
-      line-height: 1.6;
-      margin-bottom: 25px;
-      text-align: left;
-    }
-    .start-btn, .restart-btn, .option-btn {
-      background: #667eea;
-      color: white;
-      border: none;
-      width: 100%;
-      padding: 16px;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-    .start-btn:hover, .restart-btn:hover {
-      background: #5a67d8;
-    }
-    #quiz-screen, #result-screen {
-      display: none;
-    }
-    .header {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-    .progress-bar {
-      height: 8px;
-      background: #edf2f7;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
-    .progress {
-      height: 100%;
-      background: #667eea;
-      width: 0%;
-      transition: width 0.3s ease;
-    }
-    .part-badge {
-      display: inline-block;
-      background: #e2e8f0;
-      color: #4a5568;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-    }
-    .question-text {
-      font-size: 17px;
-      font-weight: 600;
-      line-height: 1.5;
-      margin-bottom: 25px;
-      color: #2d3748;
-    }
-    .options {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .option-btn {
-      background: #f7fafc;
-      border: 2px solid #e2e8f0;
-      color: #4a5568;
-      text-align: left;
-      font-weight: 500;
-      padding: 14px;
-      line-height: 1.4;
-    }
-    .option-btn:hover {
-      border-color: #667eea;
-      background: #ebf8ff;
-      color: #2b6cb0;
-    }
-    .result-title {
-      font-size: 22px;
-      color: #2b6cb0;
-      margin-bottom: 20px;
-      text-align: center;
-      font-weight: bold;
-    }
-    .result-section {
-      margin-bottom: 20px;
-    }
-    .result-section h3 {
-      font-size: 16px;
-      color: #2d3748;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #edf2f7;
-      padding-bottom: 6px;
-    }
-    .result-list {
-      list-style-type: disc;
-      padding-left: 20px;
-      margin-bottom: 15px;
-      font-size: 14px;
-      line-height: 1.6;
-      color: #4a5568;
-    }
-    .result-text {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #4a5568;
-      margin-bottom: 15px;
-    }
-    .cta-box {
-      background: #ebf8ff;
-      border: 2px solid #bee3f8;
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 25px;
-      margin-bottom: 25px;
-      font-size: 14px;
-      line-height: 1.6;
-      color: #2b6cb0;
-      text-align: center;
-    }
-    .cta-box a {
-      color: #3182ce;
-      font-weight: bold;
-      text-decoration: underline;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; color: #2d3748; }
+    .quiz-container { background: #ffffff; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); width: 100%; max-width: 650px; padding: 30px; position: relative; }
+    .welcome-screen { text-align: center; }
+    .welcome-screen h1 { font-size: 20px; color: #1a202c; margin-bottom: 20px; line-height: 1.4; }
+    .instruction-box { background: #f7fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; font-size: 15px; color: #4a5568; line-height: 1.6; margin-bottom: 25px; text-align: left; }
+    .start-btn, .restart-btn, .option-btn { background: #667eea; color: white; border: none; width: 100%; padding: 16px; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s ease; }
+    .start-btn:hover, .restart-btn:hover { background: #5a67d8; }
+    #quiz-screen, #result-screen { display: none; }
+    .header { text-align: center; margin-bottom: 25px; }
+    .progress-bar { height: 8px; background: #edf2f7; border-radius: 4px; overflow: hidden; margin-bottom: 20px; }
+    .progress { height: 100%; background: #667eea; width: 0%; transition: width 0.3s ease; }
+    .part-badge { display: inline-block; background: #e2e8f0; color: #4a5568; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 12px; margin-bottom: 15px; text-transform: uppercase; }
+    .question-text { font-size: 17px; font-weight: 600; line-height: 1.5; margin-bottom: 25px; color: #2d3748; }
+    .options { display: flex; flex-direction: column; gap: 12px; }
+    .option-btn { background: #f7fafc; border: 2px solid #e2e8f0; color: #4a5568; text-align: left; font-weight: 500; padding: 14px; line-height: 1.4; }
+    .option-btn:hover { border-color: #667eea; background: #ebf8ff; color: #2b6cb0; }
+    .result-title { font-size: 22px; color: #2b6cb0; margin-bottom: 20px; text-align: center; font-weight: bold; }
+    .result-section { margin-bottom: 20px; }
+    .result-section h3 { font-size: 16px; color: #2d3748; margin-bottom: 10px; border-bottom: 2px solid #edf2f7; padding-bottom: 6px; }
+    .result-list { list-style-type: disc; padding-left: 20px; margin-bottom: 15px; font-size: 14px; line-height: 1.6; color: #4a5568; }
+    .result-text { font-size: 14px; line-height: 1.6; color: #4a5568; margin-bottom: 15px; }
+    .cta-box { background: #ebf8ff; border: 2px solid #bee3f8; border-radius: 12px; padding: 20px; margin-top: 25px; margin-bottom: 25px; font-size: 14px; line-height: 1.6; color: #2b6cb0; text-align: center; }
+    .cta-box a { color: #3182ce; font-weight: bold; text-decoration: underline; }
   </style>
 </head>
 <body>
 
 <div class="quiz-container">
-  <!-- Экран приветствия -->
   <div id="welcome-screen" class="welcome-screen">
     <h1>Тест:<br>Как этот сценарий управляет твоими деньгами, отношениями и сексом пройди до конца и у тебя не останется ни каких сомнений что твой мозг тебя обманывает</h1>
     <div class="instruction-box">
@@ -184,7 +43,6 @@
     <button class="start-btn" id="start-btn">Начать тест</button>
   </div>
 
-  <!-- Экран теста -->
   <div id="quiz-screen">
     <div class="header">
       <div class="progress-bar"><div class="progress" id="progress"></div></div>
@@ -198,7 +56,6 @@
     </div>
   </div>
 
-  <!-- Экран результатов -->
   <div id="result-screen">
     <div class="result-title" id="result-name">Твой сценарий</div>
     <div id="result-content"></div>
@@ -216,7 +73,6 @@
 
 <script>
 const questions = [
-  // Часть 1. Отношения
   { part: "Часть 1. Отношения", type: "A", text: "1. Я полностью растворяюсь в партнёре или семье. Задвигаю свои интересы, планы и желания на задний план." },
   { part: "Часть 1. Отношения", type: "A", text: "2. Я молча проглатываю обиды, хамство и неуважение, потому что панически боюсь конфликтов, проще промолчать или согласиться." },
   { part: "Часть 1. Отношения", type: "A", text: "3. Я тяну на себе эмоциональное состояние партнёра, помогаю решить его проблемы и заслуживаю его одобрение своей жертвенностью." },
@@ -228,7 +84,6 @@ const questions = [
   { part: "Часть 1. Отношения", type: "C", text: "9. Если мне хреново, я никому об этом не скажу, а запрусь в комнате и выплачусь в подушку." },
   { part: "Часть 1. Отношения", type: "C", text: "10. Просить о поддержке или тепле для меня — это унижение, потому что это бессмысленно." },
   
-  // Часть 2. Деньги
   { part: "Часть 2. Деньги", type: "A", text: "11. Все мои деньги и силы уходят на семью, мужа или других людей, а себе — по остаточному принципу." },
   { part: "Часть 2. Деньги", type: "A", text: "12. Мне страшно назвать нормальную цену или заявить о себе. Могу согласиться на невыгодную стоимость или сделать скидку." },
   { part: "Часть 2. Деньги", type: "A", text: "13. Я финансирую всех вокруг: инфантильных партнеров, родственников, оплачиваю их потребности и желания." },
@@ -239,7 +94,6 @@ const questions = [
   { part: "Часть 2. Деньги", type: "C", text: "18. Мне жалко денег на себя, зато я могу копить на «черный день», потому что тратить на удовольствие кажется опасным." },
   { part: "Часть 2. Деньги", type: "C", text: "19. Зарабатывать деньги тяжело, но просить или принимать финансовую помощь от кого-то — унизительно." },
   
-  // Часть 3. Секс
   { part: "Часть 3. Секс", type: "A", text: "20. Секс для меня — это еще одна обязанность, я ложусь в постель «чтобы он не дулся и не гулял»." },
   { part: "Часть 3. Секс", type: "A", text: "21. Я годами имитирую оргазм и соглашаюсь на то, что мне неприятно, лишь бы сохранить мир в семье." },
   { part: "Часть 3. Секс", type: "A", text: "22. Мои собственные желания в постели полностью выключены. Я привыкла быть удобным объектом." },
@@ -335,7 +189,6 @@ function showQuestion() {
 function handleAnswer() {
   const q = questions[currentQuestion];
   answers[q.type] += 1;
-  
   currentQuestion++;
   
   if (currentQuestion < questions.length) {
@@ -348,4 +201,44 @@ function handleAnswer() {
 function showResult() {
   document.getElementById("quiz-screen").style.display = "none";
   document.getElementById("result-screen").style.display = "block";
-  window
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  
+  let topResult = 'A';
+  if (answers.B > answers.A && answers.B >= answers.C) topResult = 'B';
+  if (answers.C > answers.A && answers.C > answers.B) topResult = 'C';
+  
+  const res = results[topResult];
+  document.getElementById("result-name").innerText = res.title;
+  
+  let phrasesHtml = res.phrases.map(p => `<li>${p}</li>`).join('');
+  
+  document.getElementById("result-content").innerHTML = `
+    <div class="result-section">
+      <h3>1. Формирование: Фразы, которые запрограммировали твою роль</h3>
+      <ul class="result-list">${phrasesHtml}</ul>
+    </div>
+    <div class="result-section">
+      <h3>2. В чем наш мозг нас обманывает / ловушка?</h3>
+      <div class="result-text">${res.trap}</div>
+    </div>
+    <div class="result-section">
+      <h3>3. На уровне тела:</h3>
+      <div class="result-text">${res.body}</div>
+    </div>
+    <div class="result-section">
+      <h3>4. Что делать:</h3>
+      <div class="result-text"><strong>${res.solution}</strong></div>
+    </div>
+  `;
+}
+
+document.getElementById('restart-btn').addEventListener('click', function() {
+  currentQuestion = 0;
+  answers = { A: 0, B: 0, C: 0 };
+  document.getElementById("result-screen").style.display = "none";
+  document.getElementById("welcome-screen").style.display = "block";
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+</body>
+</html>
