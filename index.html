@@ -33,7 +33,7 @@
       text-align: center;
     }
     .welcome-screen h1 {
-      font-size: 22px;
+      font-size: 20px;
       color: #1a202c;
       margin-bottom: 20px;
       line-height: 1.4;
@@ -152,6 +152,23 @@
       color: #4a5568;
       margin-bottom: 15px;
     }
+    .cta-box {
+      background: #ebf8ff;
+      border: 2px solid #bee3f8;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #2b6cb0;
+      text-align: center;
+    }
+    .cta-box a {
+      color: #3182ce;
+      font-weight: bold;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -159,7 +176,7 @@
 <div class="quiz-container">
   <!-- Экран приветствия -->
   <div id="welcome-screen" class="welcome-screen">
-    <h1>Тест:<br>Какой сценарий управляет твоими деньгами, отношениями и сексом</h1>
+    <h1>Тест:<br>Как этот сценарий управляет твоими деньгами, отношениями и сексом пройди до конца и у тебя не останется ни каких сомнений что твой мозг тебя обманывает</h1>
     <div class="instruction-box">
       <strong>Инструкция:</strong><br><br>
       Выбирай вариант, который ближе всего описывает твою реальность прямо сейчас, даже если в этом стыдно признаться самой себе.
@@ -185,6 +202,14 @@
   <div id="result-screen">
     <div class="result-title" id="result-name">Твой сценарий</div>
     <div id="result-content"></div>
+    
+    <div class="cta-box">
+      Можно и дальше делать вид что все нормально, само рассосаться и сливать свою жизнь в унитаз и чтоб это не сочилось я приглашаю тебя на бесплатную 20-минутную консультацию где мы подробно разберем как именно твой сценарий сформировался и наметим план выхода из него.<br><br>
+      Для записи напишите мне в личные сообщения:<br>
+      <a href="https://t.me/dengi_bez_vigoraniy" target="_blank">@dengi_bez_vigoraniy</a><br>
+      <strong>Хочу на бесплатную консультацию</strong>
+    </div>
+
     <button class="restart-btn" id="restart-btn">Пройти тест заново</button>
   </div>
 </div>
@@ -315,6 +340,7 @@ function handleAnswer(choice) {
 function showResult() {
   document.getElementById("quiz-screen").style.display = "none";
   document.getElementById("result-screen").style.display = "block";
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   
   let topResult = 'A';
   if (answers.B >= answers.A && answers.B >= answers.C) topResult = 'B';
@@ -350,6 +376,7 @@ document.getElementById('restart-btn').addEventListener('click', function() {
   answers = { A: 0, B: 0, C: 0 };
   document.getElementById("result-screen").style.display = "none";
   document.getElementById("welcome-screen").style.display = "block";
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 </script>
 </body>
